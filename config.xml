@@ -1,10 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
     <actions/>
-    <description>&lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/build/pdepend/overview-pyramid.svg&quot;
-        width=&quot;500&quot;&gt;&lt;/img&gt;&#xd;
-        &lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/build/pdepend/dependencies.svg&quot;
-        width=&quot;500&quot;&gt;&lt;/img&gt;</description>
+    <description>&lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/build/pdepend/overview-pyramid.svg&quot; width=&quot;500&quot;&gt;&lt;/img&gt;&#xd;
+        &lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/build/pdepend/dependencies.svg&quot; width=&quot;500&quot;&gt;&lt;/img&gt;</description>
     <keepDependencies>false</keepDependencies>
     <properties>
         <jenkins.model.BuildDiscarderProperty>
@@ -46,13 +44,16 @@
             <targets></targets>
             <antName>Jenkins integrated</antName>
         </hudson.tasks.Ant>
+        <hudson.tasks.Shell>
+            <command>phpmetrics --report-html=build/logs/phpmetrics/index.html Classes</command>
+        </hudson.tasks.Shell>
     </builders>
     <publishers>
         <hudson.plugins.warnings.WarningsPublisher plugin="warnings@4.50">
             <healthy></healthy>
             <unHealthy></unHealthy>
             <thresholdLimit>low</thresholdLimit>
-            <pluginName>[WARNINGS]</pluginName>
+            <pluginName>[WARNINGS] </pluginName>
             <defaultEncoding></defaultEncoding>
             <canRunOnFailed>true</canRunOnFailed>
             <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
@@ -92,7 +93,7 @@
             <healthy></healthy>
             <unHealthy></unHealthy>
             <thresholdLimit>low</thresholdLimit>
-            <pluginName>[CHECKSTYLE]</pluginName>
+            <pluginName>[CHECKSTYLE] </pluginName>
             <defaultEncoding></defaultEncoding>
             <canRunOnFailed>true</canRunOnFailed>
             <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
@@ -125,7 +126,7 @@
             <healthy></healthy>
             <unHealthy></unHealthy>
             <thresholdLimit>low</thresholdLimit>
-            <pluginName>[PMD]</pluginName>
+            <pluginName>[PMD] </pluginName>
             <defaultEncoding></defaultEncoding>
             <canRunOnFailed>true</canRunOnFailed>
             <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
@@ -158,7 +159,7 @@
             <healthy></healthy>
             <unHealthy></unHealthy>
             <thresholdLimit>low</thresholdLimit>
-            <pluginName>[DRY]</pluginName>
+            <pluginName>[DRY] </pluginName>
             <defaultEncoding></defaultEncoding>
             <canRunOnFailed>true</canRunOnFailed>
             <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
@@ -200,15 +201,13 @@
                             <label></label>
                             <fileType>csv</fileType>
                             <strExclusionSet>
-                                <string>Lines of Code (LOC)</string>
+                                <string>                              Lines of Code (LOC)</string>
                                 <string>Non-Comment Lines of Code (NCLOC)</string>
                                 <string>Comment Lines of Code (CLOC)</string>
-                                <string>Logical Lines of Code (LLOC)</string>
+                                <string>Logical Lines of Code (LLOC)                          </string>
                             </strExclusionSet>
                             <inclusionFlag>INCLUDE_BY_STRING</inclusionFlag>
-                            <exclusionValues>Lines of Code (LOC),Comment Lines of Code (CLOC),Non-Comment Lines of Code
-                                (NCLOC),Logical Lines of Code (LLOC)
-                            </exclusionValues>
+                            <exclusionValues>                              Lines of Code (LOC),Comment Lines of Code (CLOC),Non-Comment Lines of Code (NCLOC),Logical Lines of Code (LLOC)                          </exclusionValues>
                             <url></url>
                             <displayTableFlag>false</displayTableFlag>
                         </hudson.plugins.plot.CSVSeries>
@@ -261,14 +260,12 @@
                             <label></label>
                             <fileType>csv</fileType>
                             <strExclusionSet>
-                                <string>Average Class Length (LLOC)</string>
-                                <string>Average Function Length (LLOC)</string>
+                                <string>                              Average Class Length (LLOC)</string>
+                                <string>Average Function Length (LLOC)                          </string>
                                 <string>Average Method Length (LLOC)</string>
                             </strExclusionSet>
                             <inclusionFlag>INCLUDE_BY_STRING</inclusionFlag>
-                            <exclusionValues>Average Class Length (LLOC),Average Method Length (LLOC),Average Function
-                                Length (LLOC)
-                            </exclusionValues>
+                            <exclusionValues>                              Average Class Length (LLOC),Average Method Length (LLOC),Average Function Length (LLOC)                          </exclusionValues>
                             <url></url>
                             <displayTableFlag>false</displayTableFlag>
                         </hudson.plugins.plot.CSVSeries>
@@ -292,13 +289,11 @@
                             <label></label>
                             <fileType>csv</fileType>
                             <strExclusionSet>
-                                <string>Cyclomatic Complexity / Number of Methods</string>
-                                <string>Cyclomatic Complexity / Lines of Code</string>
+                                <string>Cyclomatic Complexity / Number of Methods                          </string>
+                                <string>                              Cyclomatic Complexity / Lines of Code</string>
                             </strExclusionSet>
                             <inclusionFlag>INCLUDE_BY_STRING</inclusionFlag>
-                            <exclusionValues>Cyclomatic Complexity / Lines of Code,Cyclomatic Complexity / Number of
-                                Methods
-                            </exclusionValues>
+                            <exclusionValues>                              Cyclomatic Complexity / Lines of Code,Cyclomatic Complexity / Number of Methods                          </exclusionValues>
                             <url></url>
                             <displayTableFlag>false</displayTableFlag>
                         </hudson.plugins.plot.CSVSeries>
@@ -352,15 +347,13 @@
                             <fileType>csv</fileType>
                             <strExclusionSet>
                                 <string>Static Methods</string>
-                                <string>Methods</string>
+                                <string>                              Methods</string>
                                 <string>Non-Static Methods</string>
-                                <string>Non-Public Methods</string>
+                                <string>Non-Public Methods                          </string>
                                 <string>Public Methods</string>
                             </strExclusionSet>
                             <inclusionFlag>INCLUDE_BY_STRING</inclusionFlag>
-                            <exclusionValues>Methods,Non-Static Methods,Static Methods,Public Methods,Non-Public
-                                Methods
-                            </exclusionValues>
+                            <exclusionValues>                              Methods,Non-Static Methods,Static Methods,Public Methods,Non-Public Methods                          </exclusionValues>
                             <url></url>
                             <displayTableFlag>false</displayTableFlag>
                         </hudson.plugins.plot.CSVSeries>
@@ -441,15 +434,13 @@
                             <label></label>
                             <fileType>csv</fileType>
                             <strExclusionSet>
-                                <string>LLOC outside functions or classes</string>
+                                <string>LLOC outside functions or classes                          </string>
                                 <string>Classes Length (LLOC)</string>
-                                <string>Logical Lines of Code (LLOC)</string>
+                                <string>                              Logical Lines of Code (LLOC)</string>
                                 <string>Functions Length (LLOC)</string>
                             </strExclusionSet>
                             <inclusionFlag>INCLUDE_BY_STRING</inclusionFlag>
-                            <exclusionValues>Logical Lines of Code (LLOC),Classes Length (LLOC),Functions Length
-                                (LLOC),LLOC outside functions or classes
-                            </exclusionValues>
+                            <exclusionValues>                              Logical Lines of Code (LLOC),Classes Length (LLOC),Functions Length (LLOC),LLOC outside functions or classes                          </exclusionValues>
                             <url></url>
                             <displayTableFlag>false</displayTableFlag>
                         </hudson.plugins.plot.CSVSeries>
@@ -502,15 +493,15 @@
                             <label></label>
                             <fileType>csv</fileType>
                             <strExclusionSet>
-                                <string>Constants</string>
+                                <string>Constants                          </string>
                                 <string>Functions</string>
-                                <string>Interfaces</string>
+                                <string>                              Interfaces</string>
                                 <string>Traits</string>
                                 <string>Methods</string>
                                 <string>Classes</string>
                             </strExclusionSet>
                             <inclusionFlag>INCLUDE_BY_STRING</inclusionFlag>
-                            <exclusionValues>Interfaces,Traits,Classes,Methods,Functions,Constants</exclusionValues>
+                            <exclusionValues>                              Interfaces,Traits,Classes,Methods,Functions,Constants                          </exclusionValues>
                             <url></url>
                             <displayTableFlag>false</displayTableFlag>
                         </hudson.plugins.plot.CSVSeries>
@@ -549,6 +540,14 @@
                     <reportName>API Documentation</reportName>
                     <reportDir>build/api/html</reportDir>
                     <reportFiles>index.xhtml</reportFiles>
+                    <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+                    <keepAll>false</keepAll>
+                    <allowMissing>false</allowMissing>
+                </htmlpublisher.HtmlPublisherTarget>
+                <htmlpublisher.HtmlPublisherTarget>
+                    <reportName>PHP Metrics</reportName>
+                    <reportDir>build/logs/phpmetrics</reportDir>
+                    <reportFiles>index.html</reportFiles>
                     <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
                     <keepAll>false</keepAll>
                     <allowMissing>false</allowMissing>
